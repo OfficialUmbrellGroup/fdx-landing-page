@@ -1,11 +1,57 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* ---- Air Force blue (RAF #5d8aa8) + copper palette, dark exchange surfaces ---- */
+  --af-blue-950: #0d1822;
+  --af-blue-900: #12202c;
+  --af-blue-800: #1a2c3d;
+  --af-blue-700: #3a5a70;
+  --af-blue-600: #4a7089;
+  --af-blue-500: #5d8aa8; /* Air Force blue — primary */
+  --af-blue-400: #7ba6bd;
+  --af-blue-300: #9fc2d4;
+  --af-blue-200: #c3dae6;
+  --af-blue-100: #e1edf3;
+  --af-blue-50:  #f2f7fa;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --copper-600: #a34a14;
+  --copper-500: #c96216; /* complementary accent */
+  --copper-400: #e67e22;
+  --copper-300: #f0a04e;
+  --copper-glow: rgba(230, 126, 34, 0.22);
+
+  --ink-900: #16232e;
+  --ink-700: #35485a;
+  --ink-500: #5d7186;
+  --ink-300: #93a5b7;
+  --ink-100: #223546; /* hairlines on dark surfaces */
+
+  --up: #2ebd85;
+  --up-dim: rgba(46, 189, 133, 0.12);
+  --down: #f6465d;
+  --down-dim: rgba(246, 70, 93, 0.12);
+
+  --paper: #ffffff;
+  --paper-dim: #f7f9fb;
+
+  --txt-1: #ffffff;
+  --txt-2: rgba(195, 218, 230, 0.82); /* af-blue-200 at reduced strength */
+  --txt-3: #7d93a8;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 1px 3px rgba(4, 10, 16, 0.5);
+  --shadow-md: 0 10px 32px rgba(4, 10, 16, 0.45);
+  --shadow-lg: 0 24px 70px rgba(4, 10, 16, 0.6);
+
+  --max-w: 1180px;
+
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  color-scheme: dark;
+  color: var(--txt-1);
+  background-color: var(--af-blue-950);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +59,40 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+* {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html,
+body {
+  overflow-x: clip; /* clip propagated table/ticker overflow without breaking sticky nav */
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--af-blue-950);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  border: none;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background: none;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+::selection {
+  background: rgba(93, 138, 168, 0.4);
+  color: #fff;
 }
