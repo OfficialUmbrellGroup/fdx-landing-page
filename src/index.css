@@ -1,82 +1,114 @@
 :root {
-  /* ---- Air Force blue (RAF #5d8aa8) + copper palette, dark exchange surfaces ---- */
-  --af-blue-950: #0d1822;
-  --af-blue-900: #12202c;
-  --af-blue-800: #1a2c3d;
-  --af-blue-700: #3a5a70;
-  --af-blue-600: #4a7089;
-  --af-blue-500: #5d8aa8; /* Air Force blue — primary */
-  --af-blue-400: #7ba6bd;
-  --af-blue-300: #9fc2d4;
-  --af-blue-200: #c3dae6;
-  --af-blue-100: #e1edf3;
-  --af-blue-50:  #f2f7fa;
+  /* Brand */
+  --navy-950: #061429;
+  --navy-900: #0a1e3a;
+  --navy-850: #0e2647;
+  --navy-800: #132f56;
+  --navy-700: #1c3d6b;
+  --sky-300: #8fd0fb;
+  --sky-400: #5bbcf8;
+  --sky-500: #34a8f4;
+  --sky-600: #1690e0;
+  --sky-700: #0b72b9;
+  --sky-50: #eef7fe;
+  --gold-400: #d9b56b;
+  --gold-500: #c49a4a;
 
-  --copper-600: #a34a14;
-  --copper-500: #c96216; /* complementary accent */
-  --copper-400: #e67e22;
-  --copper-300: #f0a04e;
-  --copper-glow: rgba(230, 126, 34, 0.22);
+  /* Light theme (default) */
+  --bg: #ffffff;
+  --bg-alt: #f5f8fc;
+  --surface: #ffffff;
+  --surface-2: #f3f6fa;
+  --text-1: #0a1e3a;
+  --text-2: #4b5d76;
+  --text-3: #7c8ba1;
+  --line: #e5ebf2;
+  --line-strong: #d5dfeb;
+  --link: var(--sky-700);
+  --up: #0f9f6e;
+  --down: #d93f48;
+  --shadow-sm: 0 1px 2px rgba(10, 30, 58, 0.06);
+  --shadow-md: 0 12px 32px -8px rgba(10, 30, 58, 0.16), 0 2px 6px rgba(10, 30, 58, 0.05);
+  --shadow-lg: 0 32px 64px -16px rgba(10, 30, 58, 0.28), 0 4px 12px rgba(10, 30, 58, 0.06);
 
-  --ink-900: #16232e;
-  --ink-700: #35485a;
-  --ink-500: #5d7186;
-  --ink-300: #93a5b7;
-  --ink-100: #223546; /* hairlines on dark surfaces */
+  --font-body: 'Inter Variable', 'Inter', 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  --font-display: 'Geist Variable', 'Inter Variable', system-ui, sans-serif;
 
-  --up: #2ebd85;
-  --up-dim: rgba(46, 189, 133, 0.12);
-  --down: #f6465d;
-  --down-dim: rgba(246, 70, 93, 0.12);
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
 
-  --paper: #ffffff;
-  --paper-dim: #f7f9fb;
+  --container: 1200px;
+  --nav-h: 68px;
 
-  --txt-1: #ffffff;
-  --txt-2: rgba(195, 218, 230, 0.82); /* af-blue-200 at reduced strength */
-  --txt-3: #7d93a8;
-
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-
-  --shadow-sm: 0 1px 3px rgba(4, 10, 16, 0.5);
-  --shadow-md: 0 10px 32px rgba(4, 10, 16, 0.45);
-  --shadow-lg: 0 24px 70px rgba(4, 10, 16, 0.6);
-
-  --max-w: 1180px;
-
-  font-family: Inter, "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.55;
-  font-weight: 400;
-  color-scheme: dark;
-  color: var(--txt-1);
-  background-color: var(--af-blue-950);
-
+  color: var(--text-1);
+  background: var(--bg);
+  font-feature-settings: 'cv11', 'ss01';
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+.dark {
+  --bg: var(--navy-900);
+  --bg-alt: var(--navy-950);
+  --surface: var(--navy-850);
+  --surface-2: var(--navy-800);
+  --text-1: #f1f5fb;
+  --text-2: #a6b6cc;
+  --text-3: #7185a2;
+  --line: rgba(166, 190, 224, 0.12);
+  --line-strong: rgba(166, 190, 224, 0.2);
+  --link: var(--sky-400);
+  --up: #25c07c;
+  --down: #f0535b;
+  --shadow-md: 0 16px 40px -12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
+
+  color: var(--text-1);
+  background-color: var(--bg);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
 }
 
 html,
 body {
-  overflow-x: clip; /* clip propagated table/ticker overflow without breaking sticky nav */
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--af-blue-950);
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure {
   margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
 }
 
 a {
@@ -84,15 +116,45 @@ a {
   text-decoration: none;
 }
 
-button {
-  font-family: inherit;
-  border: none;
-  cursor: pointer;
-  background: none;
+button,
+input {
+  font: inherit;
   color: inherit;
 }
 
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+img,
+svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sky-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 ::selection {
-  background: rgba(93, 138, 168, 0.4);
-  color: #fff;
+  background: rgba(52, 168, 244, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
